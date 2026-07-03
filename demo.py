@@ -1,15 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Demonstração ao vivo (apresentação): processa UMA imagem qualquer com o
-Canny clássico e/ou o Canny Modificado Gabor-Di Zenzo e salva os painéis
-em resultados/demo/<nome_da_imagem>/.
 
-Exemplos:
-  python demo.py GrayAndMagenta.png
-  python demo.py Zebra.png --metodo modificado
-  python demo.py GrayAndMagenta.png --banco config\\experimentos\\gabor_t31_s4_l16_g0.5_psim1.5708.json
-  python demo.py FCBarcelona.png --thigh 5000
-  python demo.py C:\\qualquer\\foto.jpg
 """
 
 import argparse

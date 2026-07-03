@@ -1,0 +1,28 @@
+RASCUNHO DO E-MAIL DA EQUIPE — PRAZO: 15/06/2026 (envie você mesmo!)
+=====================================================================
+
+Para:    leonardo@ci.ufpb.br
+Assunto: Equipe de PDI
+
+Prezado Professor Leonardo,
+
+Conforme solicitado na especificação do Trabalho Prático da disciplina
+Introdução ao Processamento Digital de Imagens (2026.1), informo a
+composição da nossa equipe:
+
+  1. <NOME COMPLETO DO INTEGRANTE 1 — matrícula, se aplicável>
+  2. <NOME COMPLETO DO INTEGRANTE 2 — remova as linhas que não usar>
+  3. <NOME COMPLETO DO INTEGRANTE 3>
+  4. <NOME COMPLETO DO INTEGRANTE 4>
+  5. <NOME COMPLETO DO INTEGRANTE 5>
+
+Atenciosamente,
+<SEU NOME>
+
+=====================================================================
+INSTRUÇÕES (apague tudo isto antes de enviar):
+- Substitua os placeholders pelos nomes completos; a equipe pode ter
+  até 5 integrantes; remova as linhas em excesso.
+- O assunto deve ser exatamente "Equipe de PDI".
+- Apenas UM membro do grupo envia.
+- Prazo: até 15/06/2026.

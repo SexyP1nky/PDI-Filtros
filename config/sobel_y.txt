@@ -1,0 +1,5 @@
+# Filtro Sobel Y — derivada na direcao y (linhas, sentido para BAIXO da imagem)
+# Convencao: aplicado por CORRELACAO (Modulo A). Linhas = y (para baixo), colunas = x.
+-1 -2 -1
+ 0  0  0
+ 1  2  1

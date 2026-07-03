@@ -1,0 +1,19 @@
+{
+  "nome": "gabor_t31_s4_l8_g0.5_psi0.json",
+  "descricao": "Configuração gerada pelo Experimento 1 (varredura paramétrica).",
+  "tamanho_mascara": 31,
+  "sigma": 4.0,
+  "lambda": 8.0,
+  "gamma": 0.5,
+  "psi": 0.0,
+  "orientacoes_graus": [
+    0,
+    22.5,
+    45,
+    67.5,
+    90,
+    112.5,
+    135,
+    157.5
+  ]
+}

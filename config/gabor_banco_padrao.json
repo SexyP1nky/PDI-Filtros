@@ -1,0 +1,10 @@
+{
+  "nome": "Banco de Gabor padrao",
+  "descricao": "Banco padrao usado no Canny Modificado Gabor-Di Zenzo. Convencoes: theta e a direcao da VARIACAO (portadora senoidal), em graus, no sistema x = colunas (-> direita), y = linhas (-> baixo); theta = 0 detecta bordas verticais. psi em RADIANOS; psi = -pi/2 torna a portadora senoidal impar (anti-simetrica), que responde com pico UNICO sobre bordas de degrau (evita linhas duplas no NMS).",
+  "tamanho_mascara": 31,
+  "sigma": 4.0,
+  "lambda": 8.0,
+  "gamma": 0.5,
+  "psi": -1.5707963267948966,
+  "orientacoes_graus": [0, 22.5, 45, 67.5, 90, 112.5, 135, 157.5]
+}

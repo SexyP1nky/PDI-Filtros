@@ -1,12 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-App Streamlit — Detecção de Bordas: Canny Clássico × Canny Modificado Gabor–Di Zenzo
 
-Trabalho Prático — Introdução ao Processamento Digital de Imagens — 2026.1
-
-Uso:
-    pip install streamlit
-    streamlit run app_streamlit.py
 """
 
 import math
@@ -17,10 +11,10 @@ import time
 import numpy as np
 from PIL import Image
 
-# ═══════════════════════════════════════════════════════════════════════════════
+# 
 # Setup de caminhos — adiciona src/ ao sys.path ANTES de qualquer import do
 # projeto, porque os módulos usam imports relativos (from bordas import ...)
-# ═══════════════════════════════════════════════════════════════════════════════
+# 
 RAIZ = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(RAIZ, "src")
 CFG = os.path.join(RAIZ, "config")
@@ -55,9 +49,9 @@ IMAGENS_TESTE = {
 }
 
 
-# ═══════════════════════════════════════════════════════════════════════════════
+# 
 # Funções auxiliares
-# ═══════════════════════════════════════════════════════════════════════════════
+# 
 def pil_para_rgb_float(pil_img):
     """Converte PIL Image → float32 (H,W,3) em [0..255].
 
@@ -95,9 +89,9 @@ def fmt(v):
     return f"{v:.1f}"
 
 
-# ═══════════════════════════════════════════════════════════════════════════════
+# 
 # Configuração da página (DEVE ser o primeiro comando Streamlit)
-# ═══════════════════════════════════════════════════════════════════════════════
+# 
 st.set_page_config(
     page_title="Canny × Gabor–Di Zenzo | PDI 2026.1",
     page_icon="🔬",
@@ -113,9 +107,9 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-# ═══════════════════════════════════════════════════════════════════════════════
+# 
 # Título
-# ═══════════════════════════════════════════════════════════════════════════════
+# 
 st.title("🔬 Detecção de Bordas")
 st.markdown(
     "**Canny Clássico × Canny Modificado Gabor–Di Zenzo** · "
@@ -123,11 +117,11 @@ st.markdown(
 )
 
 
-# ═══════════════════════════════════════════════════════════════════════════════
+# 
 # Sidebar — Configurações
-# ═══════════════════════════════════════════════════════════════════════════════
+# 
 with st.sidebar:
-    # ── Imagem ───────────────────────────────────────────────────────────────
+    # Imagem 
     st.header("📷 Imagem")
     fonte = st.radio(
         "Origem da imagem",
@@ -161,7 +155,7 @@ with st.sidebar:
         else:
             st.error(f"Imagem não encontrada: {nome_sel}")
 
-    # ── Método ───────────────────────────────────────────────────────────────
+    # ── Método 
     st.divider()
     st.header("⚙️ Método")
     metodo = st.radio(
@@ -170,7 +164,7 @@ with st.sidebar:
         label_visibility="collapsed",
     )
 
-    # ── Parâmetros do Gabor ──────────────────────────────────────────────────
+    # ── Parâmetros do Gabor 
     st.divider()
     st.header("🎛️ Banco de Gabor")
     with st.expander("Ajustar parâmetros", expanded=False):
@@ -190,21 +184,21 @@ with st.sidebar:
         f"γ={gamma}, ψ={'−π/2' if psi_val < 0 else '0'}, {n_ori} orientações"
     )
 
-    # ── Redimensionamento ────────────────────────────────────────────────────
+    # ── Redimensionamento 
     st.divider()
     larg_max = st.slider(
         "Largura máxima (px)", 200, 1200, 600, step=50,
         help="Imagens maiores serão redimensionadas para controlar o tempo",
     )
 
-    # ── Botão de processamento ───────────────────────────────────────────────
+    # ── Botão de processamento 
     st.divider()
     processar = st.button("🚀 Processar", type="primary", use_container_width=True)
 
 
-# ═══════════════════════════════════════════════════════════════════════════════
+# 
 # Área principal — Carregamento da imagem
-# ═══════════════════════════════════════════════════════════════════════════════
+# 
 if pil_img is None:
     st.info("👈 Selecione ou carregue uma imagem na barra lateral para começar.")
     st.stop()
@@ -224,9 +218,9 @@ if "resultados" in st.session_state:
 st.image(original_uint8, caption=f"{nome_imagem}  ({w} × {h} px)")
 
 
-# ═══════════════════════════════════════════════════════════════════════════════
+# 
 # Processamento (disparado pelo botão)
-# ═══════════════════════════════════════════════════════════════════════════════
+# 
 if processar:
     # Montar parâmetros do banco de Gabor
     orientacoes = [i * 180.0 / n_ori for i in range(n_ori)]
@@ -247,7 +241,7 @@ if processar:
     barra = st.progress(0, text="Iniciando processamento...")
 
     try:
-        # ── Canny Modificado ─────────────────────────────────────────────────
+        # ── Canny Modificado 
         if metodo in ("Ambos", "Canny Modificado"):
             barra.progress(5, text="Gerando banco de Gabor...")
             banco = gerar_banco_gabor(banco_params)
@@ -259,7 +253,7 @@ if processar:
 
             barra.progress(70, text=f"Canny Modificado concluído ({tempo_mod:.1f}s)")
 
-        # ── Canny Clássico ───────────────────────────────────────────────────
+        # ── Canny Clássico 
         if metodo in ("Ambos", "Canny Clássico"):
             barra.progress(75, text="Executando Canny Clássico...")
             t0 = time.perf_counter()
@@ -291,9 +285,9 @@ if processar:
     }
 
 
-# ═══════════════════════════════════════════════════════════════════════════════
+# 
 # Exibição dos resultados (lê de session_state)
-# ═══════════════════════════════════════════════════════════════════════════════
+# 
 if "resultados" not in st.session_state:
     st.info("Ajuste os parâmetros na barra lateral e clique em **🚀 Processar**.")
     st.stop()
@@ -370,7 +364,7 @@ if (dados["nome"] == "GrayAndMagenta.png"
         )
 
 
-# ─── Pipeline do Canny Modificado ────────────────────────────────────────────
+# ─── Pipeline do Canny Modificado 
 if res_mod is not None:
     st.divider()
     st.subheader("🔍 Pipeline — Canny Modificado Gabor–Di Zenzo")
@@ -404,7 +398,7 @@ if res_mod is not None:
         )
 
 
-# ─── Pipeline do Canny Clássico ──────────────────────────────────────────────
+# ─── Pipeline do Canny Clássico 
 if res_cla is not None:
     st.divider()
     st.subheader("🔍 Pipeline — Canny Clássico")
@@ -438,7 +432,7 @@ if res_cla is not None:
         )
 
 
-# ─── Visualização do Banco de Gabor ──────────────────────────────────────────
+# ─── Visualização do Banco de Gabor 
 if res_mod is not None:
     with st.expander("🔬 Banco de Gabor — Máscaras Geradas"):
         banco_vis = res_mod["banco"]
@@ -454,7 +448,7 @@ if res_mod is not None:
                 st.image(vis, caption=f"θ = {theta}°", use_container_width=True)
 
 
-# ─── Métricas quantitativas ──────────────────────────────────────────────────
+# ─── Métricas quantitativas 
 st.divider()
 st.subheader("📈 Métricas Quantitativas")
 
@@ -490,7 +484,7 @@ if res_mod is not None:
         mm6.metric("Tempo", f"{dados['tempo_mod']:.2f}s")
 
 
-# ─── Parâmetros utilizados ───────────────────────────────────────────────────
+# ─── Parâmetros utilizados 
 with st.expander("📋 Parâmetros utilizados neste processamento"):
     p = dados["params"]
     st.json({
@@ -506,10 +500,5 @@ with st.expander("📋 Parâmetros utilizados neste processamento"):
     })
 
 
-# ─── Rodapé ──────────────────────────────────────────────────────────────────
-st.divider()
-st.caption(
-    "Trabalho Prático — Introdução ao Processamento Digital de Imagens — "
-    "UFPB 2026.1 · "
-    "Implementação completa do zero (sem cv2.Canny, cv2.filter2D, cv2.getGaborKernel)"
+
 )

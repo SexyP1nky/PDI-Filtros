@@ -499,6 +499,3 @@ with st.expander("📋 Parâmetros utilizados neste processamento"):
         "orientacoes_graus": [round(o, 1) for o in p["orientacoes_graus"]],
     })
 
-
-
-)

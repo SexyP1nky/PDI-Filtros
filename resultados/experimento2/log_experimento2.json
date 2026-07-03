@@ -1,0 +1,218 @@
+[
+  {
+    "imagem": "Bear",
+    "dimensoes": [
+      1273,
+      1920,
+      3
+    ],
+    "tempo_modificado_s": 63.9,
+    "tempo_classico_s": 1.67,
+    "janela_zoom_centro_ij": [
+      655,
+      478
+    ],
+    "modificado": {
+      "t_low": 1357.82275390625,
+      "t_high": 3394.556884765625,
+      "pixels_candidatos_nms": 742745,
+      "pixels_fortes": 74275,
+      "pixels_fracos": 220726,
+      "pixels_borda_final": 189751,
+      "fracao_blocos_2x2_cheios": 0.000928,
+      "blocos_2x2_cheios": 176,
+      "mag_max": 10349.2919921875
+    },
+    "classico": {
+      "t_low": 73.47592163085938,
+      "t_high": 183.68980407714844,
+      "pixels_candidatos_nms": 715119,
+      "pixels_fortes": 71502,
+      "pixels_fracos": 204176,
+      "pixels_borda_final": 191129,
+      "fracao_blocos_2x2_cheios": 0.00473,
+      "blocos_2x2_cheios": 904,
+      "mag_max": 495.4739990234375
+    }
+  },
+  {
+    "imagem": "FCBarcelona",
+    "dimensoes": [
+      508,
+      500,
+      3
+    ],
+    "tempo_modificado_s": 5.42,
+    "tempo_classico_s": 0.05,
+    "janela_zoom_centro_ij": [
+      358,
+      283
+    ],
+    "modificado": {
+      "t_low": 3180.5121093750004,
+      "t_high": 7951.2802734375,
+      "pixels_candidatos_nms": 41206,
+      "pixels_fortes": 4031,
+      "pixels_fracos": 15916,
+      "pixels_borda_final": 7036,
+      "fracao_blocos_2x2_cheios": 0.000426,
+      "blocos_2x2_cheios": 3,
+      "mag_max": 14999.818359375
+    },
+    "classico": {
+      "t_low": 256.61740722656253,
+      "t_high": 641.5435180664062,
+      "pixels_candidatos_nms": 12579,
+      "pixels_fortes": 1258,
+      "pixels_fracos": 9105,
+      "pixels_borda_final": 2603,
+      "fracao_blocos_2x2_cheios": 0.0,
+      "blocos_2x2_cheios": 0,
+      "mag_max": 671.2594604492188
+    }
+  },
+  {
+    "imagem": "GrayAndMagenta",
+    "dimensoes": [
+      224,
+      224,
+      3
+    ],
+    "tempo_modificado_s": 0.9,
+    "tempo_classico_s": 0.01,
+    "janela_zoom_centro_ij": [
+      111,
+      108
+    ],
+    "modificado": {
+      "t_low": 1927.3466796875,
+      "t_high": 4818.36669921875,
+      "pixels_candidatos_nms": 1324,
+      "pixels_fortes": 224,
+      "pixels_fracos": 448,
+      "pixels_borda_final": 224,
+      "fracao_blocos_2x2_cheios": 0.0,
+      "blocos_2x2_cheios": 0,
+      "mag_max": 4818.36669921875
+    },
+    "classico": {
+      "t_low": Infinity,
+      "t_high": Infinity,
+      "pixels_candidatos_nms": 224,
+      "pixels_fortes": 0,
+      "pixels_fracos": 0,
+      "pixels_borda_final": 0,
+      "fracao_blocos_2x2_cheios": 0.0,
+      "blocos_2x2_cheios": 0,
+      "mag_max": 7.62939453125e-06
+    }
+  },
+  {
+    "imagem": "PlacaMercosul",
+    "dimensoes": [
+      506,
+      900,
+      3
+    ],
+    "tempo_modificado_s": 10.32,
+    "tempo_classico_s": 0.13,
+    "janela_zoom_centro_ij": [
+      398,
+      171
+    ],
+    "modificado": {
+      "t_low": 1810.3220703125,
+      "t_high": 4525.80517578125,
+      "pixels_candidatos_nms": 111751,
+      "pixels_fortes": 11170,
+      "pixels_fracos": 15720,
+      "pixels_borda_final": 18619,
+      "fracao_blocos_2x2_cheios": 0.000376,
+      "blocos_2x2_cheios": 7,
+      "mag_max": 13771.876953125
+    },
+    "classico": {
+      "t_low": 133.703466796875,
+      "t_high": 334.2586669921875,
+      "pixels_candidatos_nms": 83808,
+      "pixels_fortes": 8292,
+      "pixels_fracos": 4774,
+      "pixels_borda_final": 11146,
+      "fracao_blocos_2x2_cheios": 9e-05,
+      "blocos_2x2_cheios": 1,
+      "mag_max": 586.6222534179688
+    }
+  },
+  {
+    "imagem": "VintageCar",
+    "dimensoes": [
+      738,
+      476,
+      3
+    ],
+    "tempo_modificado_s": 6.89,
+    "tempo_classico_s": 0.09,
+    "janela_zoom_centro_ij": [
+      450,
+      411
+    ],
+    "modificado": {
+      "t_low": 1666.0498046875,
+      "t_high": 4165.12451171875,
+      "pixels_candidatos_nms": 94989,
+      "pixels_fortes": 9491,
+      "pixels_fracos": 17075,
+      "pixels_borda_final": 18867,
+      "fracao_blocos_2x2_cheios": 0.000159,
+      "blocos_2x2_cheios": 3,
+      "mag_max": 12139.3623046875
+    },
+    "classico": {
+      "t_low": 105.68978271484376,
+      "t_high": 264.2244567871094,
+      "pixels_candidatos_nms": 75324,
+      "pixels_fortes": 7239,
+      "pixels_fracos": 12524,
+      "pixels_borda_final": 13611,
+      "fracao_blocos_2x2_cheios": 0.001396,
+      "blocos_2x2_cheios": 19,
+      "mag_max": 596.0037841796875
+    }
+  },
+  {
+    "imagem": "Zebra",
+    "dimensoes": [
+      576,
+      768,
+      3
+    ],
+    "tempo_modificado_s": 9.84,
+    "tempo_classico_s": 0.13,
+    "janela_zoom_centro_ij": [
+      422,
+      146
+    ],
+    "modificado": {
+      "t_low": 1408.963671875,
+      "t_high": 3522.4091796875,
+      "pixels_candidatos_nms": 122627,
+      "pixels_fortes": 12263,
+      "pixels_fracos": 20390,
+      "pixels_borda_final": 18633,
+      "fracao_blocos_2x2_cheios": 0.002683,
+      "blocos_2x2_cheios": 50,
+      "mag_max": 17622.271484375
+    },
+    "classico": {
+      "t_low": 80.53521118164063,
+      "t_high": 201.33802795410156,
+      "pixels_candidatos_nms": 113419,
+      "pixels_fortes": 11334,
+      "pixels_fracos": 14985,
+      "pixels_borda_final": 13928,
+      "fracao_blocos_2x2_cheios": 0.003087,
+      "blocos_2x2_cheios": 43,
+      "mag_max": 610.7406005859375
+    }
+  }
+]

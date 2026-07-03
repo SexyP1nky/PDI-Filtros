@@ -1,0 +1,13 @@
+# Permitidas pela especificação:
+#   - NumPy: álgebra de matrizes (nenhuma função pronta de processamento de imagem é usada)
+#   - Pillow: apenas abrir/salvar imagens e desenhar rótulos/retângulos nos painéis do relatório
+#   - matplotlib (opcional): apenas gráficos de perfil 1D para o relatório
+#   - reportlab (opcional): apenas a geração do relatório PDF (gerar_relatorio_pdf.py);
+#     não participa de nenhum processamento de imagem
+numpy>=1.26
+Pillow>=10.0
+matplotlib>=3.8
+reportlab>=4.0
+
+# App web interativo (app_streamlit.py) — não participa do processamento
+streamlit>=1.30

@@ -110,7 +110,7 @@ st.markdown("""
 # 
 # Título
 # 
-st.title("🔬 Detecção de Bordas")
+st.title(" Detecção de Bordas")
 st.markdown(
     "**Canny Clássico × Canny Modificado Gabor–Di Zenzo** · "
     

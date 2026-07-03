@@ -93,7 +93,7 @@ def fmt(v):
 # Configuração da página (DEVE ser o primeiro comando Streamlit)
 # 
 st.set_page_config(
-    page_title="Canny × Gabor–Di Zenzo | PDI 2026.1",
+    page_title="Canny × Gabor–Di Zenzo",
     page_icon="🔬",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -113,7 +113,7 @@ st.markdown("""
 st.title("🔬 Detecção de Bordas")
 st.markdown(
     "**Canny Clássico × Canny Modificado Gabor–Di Zenzo** · "
-    "Trabalho Prático — PDI 2026.1"
+    
 )
 
 
@@ -122,7 +122,7 @@ st.markdown(
 # 
 with st.sidebar:
     # Imagem 
-    st.header("📷 Imagem")
+    st.header(" Imagem")
     fonte = st.radio(
         "Origem da imagem",
         ["Imagens de teste", "Upload"],
@@ -157,7 +157,7 @@ with st.sidebar:
 
     # ── Método 
     st.divider()
-    st.header("⚙️ Método")
+    st.header(" Método")
     metodo = st.radio(
         "Selecione",
         ["Ambos", "Canny Modificado", "Canny Clássico"],
@@ -166,7 +166,7 @@ with st.sidebar:
 
     # ── Parâmetros do Gabor 
     st.divider()
-    st.header("🎛️ Banco de Gabor")
+    st.header(" Banco de Gabor")
     with st.expander("Ajustar parâmetros", expanded=False):
         tam = st.slider("Tamanho da máscara", 3, 73, 31, step=2)
         sigma = st.slider("σ (escala)", 1.0, 20.0, 4.0, step=0.5)
@@ -193,14 +193,14 @@ with st.sidebar:
 
     # ── Botão de processamento 
     st.divider()
-    processar = st.button("🚀 Processar", type="primary", use_container_width=True)
+    processar = st.button(" Processar", type="primary", use_container_width=True)
 
 
 # 
 # Área principal — Carregamento da imagem
 # 
 if pil_img is None:
-    st.info("👈 Selecione ou carregue uma imagem na barra lateral para começar.")
+    st.info(" Selecione ou carregue uma imagem na barra lateral para começar.")
     st.stop()
 
 # Converter e redimensionar
@@ -262,7 +262,7 @@ if processar:
 
             barra.progress(95, text=f"Canny Clássico concluído ({tempo_cla:.1f}s)")
 
-        barra.progress(100, text="✅ Processamento concluído!")
+        barra.progress(100, text=" Processamento concluído!")
         time.sleep(0.5)
         barra.empty()
 
@@ -289,7 +289,7 @@ if processar:
 # Exibição dos resultados (lê de session_state)
 # 
 if "resultados" not in st.session_state:
-    st.info("Ajuste os parâmetros na barra lateral e clique em **🚀 Processar**.")
+    st.info("Ajuste os parâmetros na barra lateral e clique em ** Processar**.")
     st.stop()
 
 dados = st.session_state["resultados"]
@@ -298,9 +298,9 @@ res_cla = dados["res_cla"]
 orig = dados["original"]
 
 
-# ─── Comparação principal ────────────────────────────────────────────────────
+# ─── Comparação principal 
 st.divider()
-st.header("📊 Resultado — Bordas Detectadas")
+st.header(" Resultado — Bordas Detectadas")
 
 if res_mod is not None and res_cla is not None:
     # Ambos os métodos
@@ -347,14 +347,14 @@ elif res_cla is not None:
         )
 
 
-# ─── Nota especial: caso isoluminante (GrayAndMagenta) ───────────────────────
+# ─── Nota especial: caso isoluminante (GrayAndMagenta) 
 if (dados["nome"] == "GrayAndMagenta.png"
         and res_mod is not None and res_cla is not None):
     n_cla_gm = int(res_cla["bordas"].sum())
     n_mod_gm = int(res_mod["bordas"].sum())
     if n_cla_gm == 0:
         st.success(
-            f"🎯 **Caso isoluminante demonstrado!** "
+            f" **Caso isoluminante demonstrado!** "
             f"Cinza RGB(100,100,100) e Magenta RGB(172,34,251) têm "
             f"a mesma luminância (Y = 100.0). "
             f"O Canny Clássico detectou **{n_cla_gm} bordas** "
@@ -367,7 +367,7 @@ if (dados["nome"] == "GrayAndMagenta.png"
 # ─── Pipeline do Canny Modificado 
 if res_mod is not None:
     st.divider()
-    st.subheader("🔍 Pipeline — Canny Modificado Gabor–Di Zenzo")
+    st.subheader(" Pipeline — Canny Modificado Gabor–Di Zenzo")
     cols = st.columns(4)
     with cols[0]:
         st.image(
@@ -434,7 +434,7 @@ if res_cla is not None:
 
 # ─── Visualização do Banco de Gabor 
 if res_mod is not None:
-    with st.expander("🔬 Banco de Gabor — Máscaras Geradas"):
+    with st.expander(" Banco de Gabor — Máscaras Geradas"):
         banco_vis = res_mod["banco"]
         kernels = banco_vis["kernels"]
         thetas = banco_vis["orientacoes_graus"]
@@ -450,7 +450,7 @@ if res_mod is not None:
 
 # ─── Métricas quantitativas 
 st.divider()
-st.subheader("📈 Métricas Quantitativas")
+st.subheader(" Métricas Quantitativas")
 
 ambos_presentes = res_mod is not None and res_cla is not None
 n_metric_cols = 2 if ambos_presentes else 1
@@ -485,7 +485,7 @@ if res_mod is not None:
 
 
 # ─── Parâmetros utilizados 
-with st.expander("📋 Parâmetros utilizados neste processamento"):
+with st.expander(" Parâmetros utilizados neste processamento"):
     p = dados["params"]
     st.json({
         "imagem":            dados["nome"],

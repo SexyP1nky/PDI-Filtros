@@ -246,10 +246,10 @@ with st.sidebar:
     def_gamma = max(0.1, min(2.0, def_gamma))
     def_n_ori = max(4, min(16, def_n_ori))
 
-    # Snap para steps dos sliders
-    def_sigma = round(def_sigma * 2) / 2      # step 0.5
-    def_lambd = round(def_lambd)               # step 1.0
-    def_gamma = round(def_gamma * 20) / 20     # step 0.05
+    # Snap para steps dos sliders (manter float para compatibilidade com st.slider)
+    def_sigma = float(round(def_sigma * 2)) / 2.0    # step 0.5
+    def_lambd = float(round(def_lambd))               # step 1.0
+    def_gamma = float(round(def_gamma * 20)) / 20.0   # step 0.05
 
     def_psi_opcao_idx = 0 if def_psi < 0 else 1
 
